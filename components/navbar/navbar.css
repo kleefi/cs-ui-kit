@@ -1,0 +1,147 @@
+.cs-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  z-index: 10;
+}
+.cs-navbar-logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.cs-navbar-menu {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cs-navbar-menu a,
+.cs-navbar-mobile a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.cs-navbar-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+.cs-navbar-actions-col-3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cs-navbar-actions-col-2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cs-navbar-cta {
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cs-navbar-hamburger {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cs-navbar-hamburger span {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+  transition: 0.3s ease;
+}
+
+.cs-navbar-hamburger span:nth-child(1) {
+  top: 6px;
+}
+
+.cs-navbar-hamburger span:nth-child(2) {
+  top: 11px;
+}
+
+.cs-navbar-hamburger span:nth-child(3) {
+  top: 16px;
+}
+
+/* Hamburger open = X */
+.cs-navbar-hamburger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 11px;
+}
+
+.cs-navbar-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.cs-navbar-hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 11px;
+}
+.mobile-only {
+  display: none;
+}
+@media (min-width: 768px) {
+  .cs-navbar {
+    flex-direction: row;
+  }
+
+  .cs-navbar-menu {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cs-navbar-mobile {
+    display: none !important;
+  }
+
+  .cs-navbar-hamburger,
+  .mobile-only {
+    display: none !important;
+  }
+  .cs-navbar-actions-col-2 {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .cs-navbar-menu {
+    display: none !important;
+  }
+
+  .cs-navbar-mobile {
+    display: none;
+  }
+
+  .mobile-only {
+    display: inline-block;
+  }
+
+  .cs-navbar-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+  }
+}

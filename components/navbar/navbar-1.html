@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="navbar.css" />
+    <title>Navbar 1</title>
+  </head>
+  <body>
+    <!-- Navbar V1 -->
+    <nav class="cs-navbar">
+      <div class="cs-navbar-logo">LOGO</div>
+
+      <div class="cs-navbar-menu" id="cs-menu-1">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="cs-navbar-actions-col-3">
+        <button class="cs-navbar-cta">Sign Up</button>
+        <button
+          id="cs-hamburger-1"
+          class="cs-navbar-hamburger"
+          onclick="toggleMenu1()"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="cs-navbar-mobile" id="cs-mobile-1">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <script>
+      function toggleMenu1() {
+        const menu = document.getElementById("cs-mobile-1");
+        const hamburger = document.getElementById("cs-hamburger-1");
+
+        const isOpen = menu.style.display === "flex";
+        menu.style.display = isOpen ? "none" : "flex";
+
+        hamburger.classList.toggle("open", !isOpen);
+      }
+    </script>
+  </body>
+</html>

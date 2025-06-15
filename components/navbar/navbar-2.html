@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="navbar.css" />
+    <title>Navbar 2</title>
+  </head>
+  <body>
+    <nav class="cs-navbar">
+      <div class="cs-navbar-logo">LOGO</div>
+
+      <!-- Menu desktop -->
+      <div class="cs-navbar-menu" id="cs-menu-2">
+        <a href="#">Services</a>
+        <a href="#">Pricing</a>
+        <a href="#">Blog</a>
+        <button class="cs-navbar-cta">CTA</button>
+      </div>
+
+      <!-- Actions kanan (CTA + Hamburger di mobile) -->
+      <div class="cs-navbar-actions-col-2">
+        <button class="cs-navbar-cta mobile-only">CTA</button>
+        <button
+          id="cs-hamburger-2"
+          class="cs-navbar-hamburger"
+          onclick="toggleMenu2()"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div class="cs-navbar-mobile" id="cs-mobile-2">
+      <a href="#">Services</a>
+      <a href="#">Pricing</a>
+      <a href="#">Blog</a>
+    </div>
+
+    <script>
+      function toggleMenu2() {
+        const menu = document.getElementById("cs-mobile-2");
+        const hamburger = document.getElementById("cs-hamburger-2");
+
+        const isOpen = menu.style.display === "flex";
+        menu.style.display = isOpen ? "none" : "flex";
+
+        hamburger.classList.toggle("open", !isOpen);
+      }
+    </script>
+  </body>
+</html>
